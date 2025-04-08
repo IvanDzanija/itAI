@@ -5,6 +5,6 @@ build/
 dist/
 wheels/
 *.egg-info
-
+autograder/
 # Virtual environments
 .venv
