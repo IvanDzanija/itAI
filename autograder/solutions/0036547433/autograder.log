@@ -1,0 +1,1559 @@
+0036547433
+================
+
+=== UNARCHIVE AND STRUCTURE ===
+OK!
+
+=== COMPILE ===
+Skipping (python)
+
+=== EVALUATION ===
+
+=== TOTAL RESULTS ===
+32 / 32 tests passed. (100.00%)
+
+== RESOLUTION ==
+  Passed 26 / 26 tests. Failed 0 tests.
+
+== COOKING ==
+  Passed 6 / 6 tests. Failed 0 tests.
+
+== RESOLUTION ==
+== PASSED TESTS ==
+
+- Passed test: resolution resolution_small_example.txt
+-> Complete obtained output:
+1. b v ~a 
+3. a 
+2. ~b v c 
+4. ~c 
+===============
+1. b v ~a 
+2. ~b v c 
+3. a 
+4. ~c 
+5. ~b (4, 2)
+6. ~a (5, 1)
+7. NIl (6, 3)
+===============
+[CONCLUSION]: c is true
+===============
+
+- Passed test: resolution resolution_ai.txt
+-> Complete obtained output:
+4. ~lab4 v prolaz_labosi 
+14. ~mi_pismeni 
+7. prolaz_kontinuirano v ~mi_prolaz v ~zi_prolaz v ~prolaz_labosi 
+1. prolaz_labosi v ~lab1 
+9. prolaz_rok v ~ispitni_rok2 v ~prolaz_labosi 
+3. ~lab3 v prolaz_labosi 
+8. prolaz_kontinuirano v prolaz_rok v ~ispitni_rok1 v ~prolaz_labosi 
+5. mi_prolaz v ~mi_teorija v ~mi_pismeni 
+12. lab1 
+6. ~zi_pismeni v ~zi_teorija v zi_prolaz 
+15. ~zi_teorija 
+2. ~lab2 v prolaz_labosi 
+10. prolaz_predmeta v ~prolaz_kontinuirano 
+11. prolaz_predmeta v ~prolaz_rok 
+13. mi_teorija 
+17. ispitni_rok1 
+16. zi_pismeni 
+18. ~prolaz_predmeta 
+===============
+1. prolaz_labosi v ~lab1 
+8. prolaz_kontinuirano v prolaz_rok v ~ispitni_rok1 v ~prolaz_labosi 
+10. prolaz_predmeta v ~prolaz_kontinuirano 
+11. prolaz_predmeta v ~prolaz_rok 
+12. lab1 
+17. ispitni_rok1 
+18. ~prolaz_predmeta 
+19. ~prolaz_kontinuirano (18, 10)
+20. ~prolaz_rok (18, 11)
+22. prolaz_rok v ~prolaz_labosi v ~ispitni_rok1 (19, 8)
+24. ~ispitni_rok1 v ~prolaz_labosi (20, 22)
+38. ~ispitni_rok1 v ~lab1 (24, 1)
+52. ~lab1 (38, 17)
+57. NIl (52, 12)
+===============
+[CONCLUSION]: prolaz_predmeta is true
+===============
+
+- Passed test: resolution resolution_chicken_alfredo_nomilk.txt
+-> Complete obtained output:
+1. pasta 
+8. ~butter v ~cream v ~parmesan v ~milk v alfredo_sauce v ~flour 
+2. olive_oil 
+7. parmesan 
+6. cream 
+4. butter 
+5. flour 
+3. chicken 
+9. ~alfredo_sauce v ~pasta v ~chicken v chicken_alfredo v ~olive_oil 
+10. ~chicken_alfredo 
+===============
+[CONCLUSION]: chicken_alfredo is unknown
+===============
+
+- Passed test: resolution resolution_chicken_alfredo.txt
+-> Complete obtained output:
+9. ~milk v ~parmesan v ~flour v ~butter v ~cream v alfredo_sauce 
+1. pasta 
+5. flour 
+6. milk 
+3. chicken 
+8. parmesan 
+7. cream 
+4. butter 
+2. olive_oil 
+10. ~alfredo_sauce v ~chicken v ~olive_oil v chicken_alfredo v ~pasta 
+11. ~chicken_alfredo 
+===============
+1. pasta 
+2. olive_oil 
+3. chicken 
+4. butter 
+5. flour 
+6. milk 
+7. cream 
+8. parmesan 
+9. ~milk v ~parmesan v ~flour v ~butter v ~cream v alfredo_sauce 
+10. ~alfredo_sauce v ~chicken v ~olive_oil v chicken_alfredo v ~pasta 
+11. ~chicken_alfredo 
+12. ~alfredo_sauce v ~chicken v ~olive_oil v ~pasta (11, 10)
+13. ~milk v ~chicken v ~olive_oil v ~parmesan v ~flour v ~pasta v ~butter v ~cream (12, 9)
+20. ~milk v ~olive_oil v ~parmesan v ~flour v ~cream v ~pasta v ~butter (13, 3)
+33. ~olive_oil v ~parmesan v ~flour v ~cream v ~pasta v ~butter (20, 6)
+62. ~parmesan v ~flour v ~cream v ~pasta v ~butter (33, 2)
+113. ~flour v ~pasta v ~butter v ~parmesan (62, 7)
+183. ~pasta v ~butter v ~parmesan (113, 5)
+239. ~butter v ~parmesan (183, 1)
+267. ~butter (239, 8)
+275. NIl (267, 4)
+===============
+[CONCLUSION]: chicken_alfredo is true
+===============
+
+- Passed test: resolution resolution_chicken_broccoli_alfredo_big.txt
+-> Complete obtained output:
+5. butter 
+4. chicken 
+2. broccoli 
+6. flour 
+1. pasta 
+7. milk 
+11. diced_chicken v ~chicken v ~olive_oil 
+8. cream 
+9. parmesan 
+10. parsley 
+3. olive_oil 
+13. chicken_broccoli_alfredo v ~pasta v ~diced_chicken v ~broccoli v ~alfredo_sauce 
+12. ~flour v ~cream v alfredo_sauce v ~milk v ~parmesan v ~butter 
+14. ~chicken_broccoli_alfredo 
+===============
+1. pasta 
+2. broccoli 
+3. olive_oil 
+4. chicken 
+5. butter 
+6. flour 
+7. milk 
+8. cream 
+9. parmesan 
+11. diced_chicken v ~chicken v ~olive_oil 
+12. ~flour v ~cream v alfredo_sauce v ~milk v ~parmesan v ~butter 
+13. chicken_broccoli_alfredo v ~pasta v ~diced_chicken v ~broccoli v ~alfredo_sauce 
+14. ~chicken_broccoli_alfredo 
+15. ~diced_chicken v ~broccoli v ~pasta v ~alfredo_sauce (14, 13)
+18. ~chicken v ~olive_oil v ~broccoli v ~pasta v ~alfredo_sauce (15, 11)
+22. ~flour v ~cream v ~olive_oil v ~pasta v ~milk v ~chicken v ~parmesan v ~broccoli v ~butter (18, 12)
+39. ~cream v ~olive_oil v ~milk v ~pasta v ~chicken v ~parmesan v ~broccoli v ~butter (22, 6)
+73. ~cream v ~chicken v ~olive_oil v ~parmesan v ~butter v ~broccoli v ~pasta (39, 7)
+150. ~chicken v ~olive_oil v ~parmesan v ~butter v ~broccoli v ~pasta (73, 8)
+265. ~chicken v ~olive_oil v ~parmesan v ~broccoli v ~butter (150, 1)
+413. ~butter v ~chicken v ~broccoli v ~olive_oil (265, 9)
+544. ~broccoli v ~olive_oil v ~butter (413, 4)
+629. ~butter v ~olive_oil (544, 2)
+665. ~butter (629, 3)
+674. NIl (665, 5)
+===============
+[CONCLUSION]: chicken_broccoli_alfredo is true
+===============
+
+- Passed test: resolution resolution_coffee.txt
+-> Complete obtained output:
+2. heater 
+4. ~heater v ~water v hot_water 
+1. water 
+5. ~hot_water v coffee v ~coffee_powder 
+3. coffee_powder 
+6. ~coffee 
+===============
+1. water 
+2. heater 
+3. coffee_powder 
+4. ~heater v ~water v hot_water 
+5. ~hot_water v coffee v ~coffee_powder 
+6. ~coffee 
+7. ~hot_water v ~coffee_powder (6, 5)
+8. ~heater v ~water v ~coffee_powder (7, 4)
+12. ~heater v ~water (8, 3)
+13. ~heater (12, 1)
+16. NIl (13, 2)
+===============
+[CONCLUSION]: coffee is true
+===============
+
+- Passed test: resolution resolution_coffee_noheater.txt
+-> Complete obtained output:
+1. water 
+3. ~heater v ~water v hot_water 
+2. coffee_powder 
+4. ~hot_water v coffee v ~coffee_powder 
+5. ~coffee 
+===============
+[CONCLUSION]: coffee is unknown
+===============
+
+- Passed test: resolution resolution_coffee_or_tea.txt
+-> Complete obtained output:
+3. tea_bag 
+6. ~hot_water v ~coffee_powder v coffee 
+7. ~hot_water v tea_bag v tea 
+5. hot_water v ~water v ~heater 
+1. water 
+2. heater 
+4. coffee_powder 
+8. ~coffee 
+9. ~tea 
+===============
+1. water 
+2. heater 
+4. coffee_powder 
+5. hot_water v ~water v ~heater 
+6. ~hot_water v ~coffee_powder v coffee 
+8. ~coffee 
+10. ~hot_water v ~coffee_powder (8, 6)
+11. ~water v ~coffee_powder v ~heater (10, 5)
+13. ~water v ~coffee_powder (11, 2)
+16. ~coffee_powder (13, 1)
+19. NIl (16, 4)
+===============
+[CONCLUSION]: coffee v tea is true
+===============
+
+- Passed test: resolution resolution_coffee_or_tea_nopowder.txt
+-> Complete obtained output:
+5. coffee v ~coffee_powder v ~hot_water 
+1. water 
+3. tea_bag 
+2. heater 
+4. ~heater v ~water v hot_water 
+6. ~tea_bag v ~hot_water v tea 
+8. ~tea 
+7. ~coffee 
+===============
+1. water 
+2. heater 
+3. tea_bag 
+4. ~heater v ~water v hot_water 
+6. ~tea_bag v ~hot_water v tea 
+8. ~tea 
+9. ~tea_bag v ~hot_water (8, 6)
+11. ~hot_water (9, 3)
+14. ~heater v ~water (11, 4)
+19. ~heater (14, 1)
+23. NIl (19, 2)
+===============
+[CONCLUSION]: coffee v tea is true
+===============
+
+- Passed test: resolution resolution_small_example_2.txt
+-> Complete obtained output:
+3. ~a v c v ~b 
+1. a 
+2. b 
+4. ~c 
+===============
+1. a 
+2. b 
+3. ~a v c v ~b 
+4. ~c 
+5. ~a v ~b (4, 3)
+6. ~b (5, 1)
+8. NIl (6, 2)
+===============
+[CONCLUSION]: c is true
+===============
+
+- Passed test: resolution resolution_small_example_3.txt
+-> Complete obtained output:
+1. ~a v b 
+2. ~b v c 
+3. ~c 
+===============
+[CONCLUSION]: c is unknown
+===============
+
+- Passed test: resolution resolution_small_example_4.txt
+-> Complete obtained output:
+1. ~a v b 
+2. c v ~b 
+3. a 
+5. ~b 
+4. ~c 
+===============
+1. ~a v b 
+3. a 
+5. ~b 
+6. ~a (5, 1)
+7. NIl (6, 3)
+===============
+[CONCLUSION]: c v b is true
+===============
+
+- Passed test: resolution resolution_heldout_small.txt
+-> Complete obtained output:
+1. a 
+2. ~a 
+===============
+1. a 
+2. ~a 
+3. NIl (2, 1)
+===============
+[CONCLUSION]: a is true
+===============
+
+- Passed test: resolution resolution_heldout_small_2.txt
+-> Complete obtained output:
+1. a 
+3. ~c 
+2. ~b 
+===============
+[CONCLUSION]: b v c is unknown
+===============
+
+- Passed test: resolution resolution_heldout_tautology.txt
+-> Complete obtained output:
+2. a v c v ~b 
+1. b v ~a 
+3. a 
+4. ~c 
+===============
+[CONCLUSION]: c is unknown
+===============
+
+- Passed test: resolution resolution_heldout_tautology_2.txt
+-> Complete obtained output:
+5. a 
+2. a v ~b v c 
+4. d 
+3. c v ~a v ~d 
+1. b v ~a 
+6. ~c 
+===============
+3. c v ~a v ~d 
+4. d 
+5. a 
+6. ~c 
+7. ~a v ~d (6, 3)
+8. ~a (7, 4)
+12. NIl (8, 5)
+===============
+[CONCLUSION]: c is true
+===============
+
+- Passed test: resolution resolution_heldout_tautology_3.txt
+-> Complete obtained output:
+1. d 
+2. ~a 
+3. ~a 
+===============
+[CONCLUSION]: a is unknown
+===============
+
+- Passed test: resolution resolution_heldout_tautology_4.txt
+-> Complete obtained output:
+2. ~a v ~d 
+1. d 
+4. ~b 
+3. ~a 
+===============
+[CONCLUSION]: a v b is unknown
+===============
+
+- Passed test: resolution resolution_heldout_large_chain.txt
+-> Complete obtained output:
+5. e v ~d 
+3. ~b v c 
+6. ~e v f 
+7. g v ~f 
+1. a 
+2. b v ~a 
+4. ~c v d 
+8. ~g 
+===============
+1. a 
+2. b v ~a 
+3. ~b v c 
+4. ~c v d 
+5. e v ~d 
+6. ~e v f 
+7. g v ~f 
+8. ~g 
+9. ~f (8, 7)
+10. ~e (9, 6)
+11. ~d (10, 5)
+12. ~c (11, 4)
+13. ~b (12, 3)
+14. ~a (13, 2)
+15. NIl (14, 1)
+===============
+[CONCLUSION]: g is true
+===============
+
+- Passed test: resolution resolution_heldout_goal_isnegated.txt
+-> Complete obtained output:
+1. b v ~a 
+2. ~c v ~b 
+3. a 
+4. c 
+===============
+1. b v ~a 
+2. ~c v ~b 
+3. a 
+4. c 
+5. ~b (4, 2)
+6. ~a (5, 1)
+7. NIl (6, 3)
+===============
+[CONCLUSION]: ~c is true
+===============
+
+- Passed test: resolution new_example_1.txt
+-> Complete obtained output:
+2. ~a v ~c 
+1. c v a v b 
+4. c v b 
+3. ~b v a 
+5. ~c 
+===============
+[CONCLUSION]: c is unknown
+===============
+
+- Passed test: resolution new_example_2.txt
+-> Complete obtained output:
+2. b 
+4. ~b v ~c v a 
+1. b v ~a v c 
+3. ~a v ~c 
+5. b v c 
+6. c 
+===============
+2. b 
+3. ~a v ~c 
+4. ~b v ~c v a 
+6. c 
+7. ~b v a (6, 4)
+8. ~a (6, 3)
+10. ~b (8, 7)
+13. NIl (10, 2)
+===============
+[CONCLUSION]: ~c is true
+===============
+
+- Passed test: resolution new_example_3.txt
+-> Complete obtained output:
+1. b 
+4. b v c 
+3. a v ~c v ~b 
+2. ~a v ~c 
+5. c 
+===============
+1. b 
+2. ~a v ~c 
+3. a v ~c v ~b 
+5. c 
+6. a v ~b (5, 3)
+7. ~a (5, 2)
+9. ~b (7, 6)
+11. NIl (9, 1)
+===============
+[CONCLUSION]: ~c is true
+===============
+
+- Passed test: resolution new_example_4.txt
+-> Complete obtained output:
+4. ~b v ~a v c 
+5. ~c v a v ~b 
+7. ~b v c 
+2. b v d 
+1. d v b v ~a 
+3. ~c v d 
+6. ~d v a v b v c 
+8. ~d 
+===============
+2. b v d 
+3. ~c v d 
+7. ~b v c 
+8. ~d 
+9. b (8, 2)
+11. ~c (8, 3)
+14. c (9, 7)
+18. NIl (11, 14)
+===============
+[CONCLUSION]: d is true
+===============
+
+- Passed test: resolution new_example_5.txt
+-> Complete obtained output:
+2. d v b v e 
+1. ~b v d v f v ~a 
+7. c v a v ~d v b v f 
+8. ~b v d v c 
+3. d v ~c v ~f 
+4. ~b v ~a v c 
+6. ~d v e 
+5. ~b v ~c v a 
+9. ~e 
+===============
+1. ~b v d v f v ~a 
+2. d v b v e 
+3. d v ~c v ~f 
+5. ~b v ~c v a 
+6. ~d v e 
+8. ~b v d v c 
+9. ~e 
+10. d v b (9, 2)
+11. ~d (9, 6)
+13. ~b v f v ~a (11, 1)
+14. ~b v c (11, 8)
+15. b (11, 10)
+16. ~c v ~f (11, 3)
+29. c (14, 15)
+31. ~b v a (14, 5)
+40. ~f (16, 29)
+53. ~b v f (13, 31)
+65. f (15, 53)
+101. NIl (40, 65)
+===============
+[CONCLUSION]: e is true
+===============
+
+- Passed test: resolution new_example_6.txt
+-> Complete obtained output:
+12. e v d v b v ~h v ~f v a v g v ~c 
+1. b v ~a v ~d 
+14. ~f v ~d 
+15. ~b v h v ~d v a v ~c 
+10. ~e v ~g 
+6. e v ~b v ~h v a v ~g 
+9. f v g 
+13. e v h v ~f v a v ~c 
+11. f v h v ~g v ~d 
+7. c v a v d 
+2. e v d v b v a v c 
+3. ~c v d 
+4. ~h v f 
+8. c v f v ~g 
+5. ~c v ~b v ~a 
+16. ~a 
+===============
+3. ~c v d 
+4. ~h v f 
+7. c v a v d 
+9. f v g 
+10. ~e v ~g 
+11. f v h v ~g v ~d 
+13. e v h v ~f v a v ~c 
+14. ~f v ~d 
+16. ~a 
+18. c v d (16, 7)
+20. ~c v ~f v e v h (16, 13)
+37. ~c v ~f v h v ~g (20, 10)
+46. d (18, 3)
+49. c v ~f (18, 14)
+80. ~f v h v ~g (37, 49)
+116. f v h v ~g (46, 11)
+123. ~f (46, 14)
+177. h v ~g (80, 116)
+256. ~h (123, 4)
+258. g (123, 9)
+279. h (177, 258)
+288. NIl (256, 279)
+===============
+[CONCLUSION]: a is true
+===============
+
+== COOKING ==
+== PASSED TESTS ==
+
+- Passed test: cooking cooking_coffee.txt cooking_coffee_input.txt
+-> Complete obtained output:
+1. water 
+3. coffee_powder 
+5. ~coffee_powder v ~hot_water v coffee 
+4. ~water v ~heater v hot_water 
+2. heater 
+6. ~water 
+===============
+1. water 
+6. ~water 
+7. NIl (6, 1)
+===============
+[CONCLUSION]: water is true
+===============
+1. water 
+3. coffee_powder 
+5. ~coffee_powder v ~hot_water v coffee 
+4. ~water v ~heater v hot_water 
+2. heater 
+8. ~hot_water 
+===============
+1. water 
+2. heater 
+4. ~water v ~heater v hot_water 
+8. ~hot_water 
+9. ~water v ~heater (8, 4)
+10. ~heater (9, 1)
+12. NIl (10, 2)
+===============
+[CONCLUSION]: hot_water is true
+===============
+1. water 
+3. coffee_powder 
+5. ~coffee_powder v ~hot_water v coffee 
+4. ~water v ~heater v hot_water 
+2. heater 
+13. ~coffee 
+===============
+1. water 
+2. heater 
+3. coffee_powder 
+4. ~water v ~heater v hot_water 
+5. ~coffee_powder v ~hot_water v coffee 
+13. ~coffee 
+14. ~coffee_powder v ~hot_water (13, 5)
+16. ~water v ~heater v ~coffee_powder (14, 4)
+19. ~water v ~coffee_powder (16, 2)
+20. ~coffee_powder (19, 1)
+23. NIl (20, 3)
+===============
+[CONCLUSION]: coffee is true
+===============
+1. water 
+3. coffee_powder 
+5. ~coffee_powder v ~hot_water v coffee 
+4. ~water v ~heater v hot_water 
+25. ~hot_water 
+===============
+[CONCLUSION]: hot_water is unknown
+===============
+1. water 
+3. coffee_powder 
+5. ~coffee_powder v ~hot_water v coffee 
+4. ~water v ~heater v hot_water 
+28. ~coffee 
+===============
+[CONCLUSION]: coffee is unknown
+===============
+35. heater 
+1. water 
+3. coffee_powder 
+5. ~coffee_powder v ~hot_water v coffee 
+4. ~water v ~heater v hot_water 
+36. ~coffee 
+===============
+1. water 
+3. coffee_powder 
+4. ~water v ~heater v hot_water 
+5. ~coffee_powder v ~hot_water v coffee 
+35. heater 
+36. ~coffee 
+37. ~coffee_powder v ~hot_water (36, 5)
+39. ~water v ~heater v ~coffee_powder (37, 4)
+42. ~water v ~coffee_powder (39, 35)
+43. ~coffee_powder (42, 1)
+46. NIl (43, 3)
+===============
+[CONCLUSION]: coffee is true
+===============
+
+- Passed test: cooking cooking_chicken_alfredo.txt cooking_chicken_alfredo_input.txt
+-> Complete obtained output:
+3. chicken 
+1. pasta 
+4. butter 
+10. ~alfredo_sauce v ~olive_oil v ~pasta v ~chicken v chicken_alfredo 
+9. alfredo_sauce v ~parmesan v ~milk v ~butter v ~cream v ~flour 
+7. cream 
+5. flour 
+8. parmesan 
+6. milk 
+2. olive_oil 
+11. ~alfredo_sauce 
+===============
+4. butter 
+5. flour 
+6. milk 
+7. cream 
+8. parmesan 
+9. alfredo_sauce v ~parmesan v ~milk v ~butter v ~cream v ~flour 
+11. ~alfredo_sauce 
+12. ~cream v ~flour v ~milk v ~parmesan v ~butter (11, 9)
+16. ~butter v ~cream v ~flour v ~milk (12, 8)
+18. ~cream v ~flour v ~milk (16, 4)
+29. ~flour v ~milk (18, 7)
+39. ~flour (29, 6)
+43. NIl (39, 5)
+===============
+[CONCLUSION]: alfredo_sauce is true
+===============
+3. chicken 
+1. pasta 
+4. butter 
+10. ~alfredo_sauce v ~olive_oil v ~pasta v ~chicken v chicken_alfredo 
+9. alfredo_sauce v ~parmesan v ~milk v ~butter v ~cream v ~flour 
+7. cream 
+5. flour 
+8. parmesan 
+6. milk 
+2. olive_oil 
+44. ~chicken_alfredo 
+===============
+1. pasta 
+2. olive_oil 
+3. chicken 
+4. butter 
+5. flour 
+6. milk 
+7. cream 
+8. parmesan 
+9. alfredo_sauce v ~parmesan v ~milk v ~butter v ~cream v ~flour 
+10. ~alfredo_sauce v ~olive_oil v ~pasta v ~chicken v chicken_alfredo 
+44. ~chicken_alfredo 
+45. ~pasta v ~alfredo_sauce v ~olive_oil v ~chicken (44, 10)
+47. ~alfredo_sauce v ~olive_oil v ~chicken (45, 1)
+50. ~alfredo_sauce v ~olive_oil (47, 3)
+61. ~alfredo_sauce (50, 2)
+90. ~cream v ~flour v ~milk v ~parmesan v ~butter (61, 9)
+148. ~butter v ~cream v ~flour v ~milk (90, 8)
+218. ~cream v ~flour v ~milk (148, 4)
+272. ~flour v ~milk (218, 7)
+301. ~flour (272, 6)
+308. NIl (301, 5)
+===============
+[CONCLUSION]: chicken_alfredo is true
+===============
+3. chicken 
+1. pasta 
+10. ~alfredo_sauce v ~olive_oil v ~pasta v ~chicken v chicken_alfredo 
+9. alfredo_sauce v ~parmesan v ~milk v ~butter v ~cream v ~flour 
+7. cream 
+5. flour 
+8. parmesan 
+6. milk 
+2. olive_oil 
+310. ~chicken_alfredo 
+===============
+[CONCLUSION]: chicken_alfredo is unknown
+===============
+
+- Passed test: cooking cooking_chicken_alfredo_nomilk.txt cooking_chicken_alfredo_nomilk_input.txt
+-> Complete obtained output:
+5. flour 
+8. ~parmesan v ~butter v alfredo_sauce v ~flour v ~milk v ~cream 
+9. ~pasta v ~chicken v ~alfredo_sauce v ~olive_oil v chicken_alfredo 
+3. chicken 
+1. pasta 
+4. butter 
+7. parmesan 
+6. cream 
+2. olive_oil 
+10. ~alfredo_sauce 
+===============
+[CONCLUSION]: alfredo_sauce is unknown
+===============
+5. flour 
+27. milk 
+8. ~parmesan v ~butter v alfredo_sauce v ~flour v ~milk v ~cream 
+9. ~pasta v ~chicken v ~alfredo_sauce v ~olive_oil v chicken_alfredo 
+3. chicken 
+1. pasta 
+4. butter 
+7. parmesan 
+6. cream 
+2. olive_oil 
+28. ~alfredo_sauce 
+===============
+4. butter 
+5. flour 
+6. cream 
+7. parmesan 
+8. ~parmesan v ~butter v alfredo_sauce v ~flour v ~milk v ~cream 
+27. milk 
+28. ~alfredo_sauce 
+29. ~milk v ~cream v ~butter v ~flour v ~parmesan (28, 8)
+30. ~parmesan v ~milk v ~cream v ~butter (29, 5)
+37. ~milk v ~cream v ~butter (30, 7)
+45. ~cream v ~butter (37, 27)
+55. ~butter (45, 6)
+60. NIl (55, 4)
+===============
+[CONCLUSION]: alfredo_sauce is true
+===============
+5. flour 
+27. milk 
+8. ~parmesan v ~butter v alfredo_sauce v ~flour v ~milk v ~cream 
+9. ~pasta v ~chicken v ~alfredo_sauce v ~olive_oil v chicken_alfredo 
+3. chicken 
+1. pasta 
+7. parmesan 
+6. cream 
+2. olive_oil 
+62. ~alfredo_sauce 
+===============
+[CONCLUSION]: alfredo_sauce is unknown
+===============
+5. flour 
+27. milk 
+8. ~parmesan v ~butter v alfredo_sauce v ~flour v ~milk v ~cream 
+9. ~pasta v ~chicken v ~alfredo_sauce v ~olive_oil v chicken_alfredo 
+3. chicken 
+1. pasta 
+79. butter 
+7. parmesan 
+6. cream 
+2. olive_oil 
+80. ~chicken_alfredo 
+===============
+1. pasta 
+2. olive_oil 
+3. chicken 
+5. flour 
+6. cream 
+7. parmesan 
+8. ~parmesan v ~butter v alfredo_sauce v ~flour v ~milk v ~cream 
+9. ~pasta v ~chicken v ~alfredo_sauce v ~olive_oil v chicken_alfredo 
+27. milk 
+79. butter 
+80. ~chicken_alfredo 
+81. ~olive_oil v ~chicken v ~pasta v ~alfredo_sauce (80, 9)
+84. ~olive_oil v ~chicken v ~alfredo_sauce (81, 1)
+88. ~chicken v ~alfredo_sauce (84, 2)
+97. ~milk v ~cream v ~butter v ~chicken v ~flour v ~parmesan (88, 8)
+129. ~milk v ~cream v ~parmesan v ~butter v ~flour (97, 3)
+186. ~butter v ~milk v ~cream v ~parmesan (129, 5)
+253. ~milk v ~parmesan v ~butter (186, 6)
+308. ~butter v ~parmesan (253, 27)
+337. ~butter (308, 7)
+344. NIl (337, 79)
+===============
+[CONCLUSION]: chicken_alfredo is true
+===============
+
+- Passed test: cooking cooking_chicken_broccoli_alfredo_big.txt cooking_chicken_broccoli_alfredo_big_input.txt
+-> Complete obtained output:
+1. pasta 
+4. chicken 
+5. butter 
+13. ~pasta v ~alfredo_sauce v ~diced_chicken v ~broccoli v chicken_broccoli_alfredo 
+11. diced_chicken v ~olive_oil v ~chicken 
+6. flour 
+7. milk 
+9. parmesan 
+10. parsley 
+3. olive_oil 
+2. broccoli 
+8. cream 
+12. ~milk v ~flour v ~cream v alfredo_sauce v ~parmesan v ~butter 
+14. ~chicken_broccoli_alfredo 
+===============
+1. pasta 
+2. broccoli 
+3. olive_oil 
+4. chicken 
+5. butter 
+6. flour 
+7. milk 
+8. cream 
+9. parmesan 
+11. diced_chicken v ~olive_oil v ~chicken 
+12. ~milk v ~flour v ~cream v alfredo_sauce v ~parmesan v ~butter 
+13. ~pasta v ~alfredo_sauce v ~diced_chicken v ~broccoli v chicken_broccoli_alfredo 
+14. ~chicken_broccoli_alfredo 
+15. ~broccoli v ~pasta v ~diced_chicken v ~alfredo_sauce (14, 13)
+16. ~broccoli v ~diced_chicken v ~alfredo_sauce (15, 1)
+21. ~diced_chicken v ~parmesan v ~milk v ~flour v ~cream v ~butter v ~broccoli (16, 12)
+39. ~diced_chicken v ~parmesan v ~milk v ~flour v ~broccoli v ~butter (21, 8)
+71. ~diced_chicken v ~parmesan v ~milk v ~broccoli v ~butter (39, 6)
+146. ~broccoli v ~diced_chicken v ~butter v ~milk (71, 9)
+265. ~milk v ~broccoli v ~olive_oil v ~butter v ~chicken (146, 11)
+413. ~broccoli v ~olive_oil v ~chicken v ~milk (265, 5)
+547. ~broccoli v ~olive_oil v ~chicken (413, 7)
+631. ~broccoli v ~olive_oil (547, 4)
+666. ~olive_oil (631, 2)
+674. NIl (666, 3)
+===============
+[CONCLUSION]: chicken_broccoli_alfredo is true
+===============
+
+- Passed test: cooking cooking_heldout_large_chain.txt cooking_heldout_large_chain_input.txt
+-> Complete obtained output:
+4. d v ~c 
+2. b v ~a 
+5. ~d v e 
+7. g v ~f 
+1. a 
+3. c v ~b 
+6. f v ~e 
+8. ~b 
+===============
+1. a 
+2. b v ~a 
+8. ~b 
+9. ~a (8, 2)
+10. NIl (9, 1)
+===============
+[CONCLUSION]: b is true
+===============
+4. d v ~c 
+2. b v ~a 
+5. ~d v e 
+7. g v ~f 
+1. a 
+3. c v ~b 
+6. f v ~e 
+11. ~c 
+===============
+1. a 
+2. b v ~a 
+3. c v ~b 
+11. ~c 
+12. ~b (11, 3)
+13. ~a (12, 2)
+14. NIl (13, 1)
+===============
+[CONCLUSION]: c is true
+===============
+4. d v ~c 
+2. b v ~a 
+5. ~d v e 
+7. g v ~f 
+1. a 
+3. c v ~b 
+6. f v ~e 
+15. ~d 
+===============
+1. a 
+2. b v ~a 
+3. c v ~b 
+4. d v ~c 
+15. ~d 
+16. ~c (15, 4)
+17. ~b (16, 3)
+18. ~a (17, 2)
+19. NIl (18, 1)
+===============
+[CONCLUSION]: d is true
+===============
+4. d v ~c 
+2. b v ~a 
+5. ~d v e 
+7. g v ~f 
+1. a 
+3. c v ~b 
+6. f v ~e 
+20. ~e 
+===============
+1. a 
+2. b v ~a 
+3. c v ~b 
+4. d v ~c 
+5. ~d v e 
+20. ~e 
+21. ~d (20, 5)
+22. ~c (21, 4)
+23. ~b (22, 3)
+24. ~a (23, 2)
+25. NIl (24, 1)
+===============
+[CONCLUSION]: e is true
+===============
+4. d v ~c 
+2. b v ~a 
+5. ~d v e 
+7. g v ~f 
+1. a 
+3. c v ~b 
+6. f v ~e 
+26. ~f 
+===============
+1. a 
+2. b v ~a 
+3. c v ~b 
+4. d v ~c 
+5. ~d v e 
+6. f v ~e 
+26. ~f 
+27. ~e (26, 6)
+28. ~d (27, 5)
+29. ~c (28, 4)
+30. ~b (29, 3)
+31. ~a (30, 2)
+32. NIl (31, 1)
+===============
+[CONCLUSION]: f is true
+===============
+4. d v ~c 
+2. b v ~a 
+5. ~d v e 
+7. g v ~f 
+1. a 
+3. c v ~b 
+6. f v ~e 
+33. ~g 
+===============
+1. a 
+2. b v ~a 
+3. c v ~b 
+4. d v ~c 
+5. ~d v e 
+6. f v ~e 
+7. g v ~f 
+33. ~g 
+34. ~f (33, 7)
+35. ~e (34, 6)
+36. ~d (35, 5)
+37. ~c (36, 4)
+38. ~b (37, 3)
+39. ~a (38, 2)
+40. NIl (39, 1)
+===============
+[CONCLUSION]: g is true
+===============
+4. d v ~c 
+5. ~d v e 
+7. g v ~f 
+1. a 
+3. c v ~b 
+6. f v ~e 
+42. ~b 
+===============
+[CONCLUSION]: b is unknown
+===============
+4. d v ~c 
+43. b v ~a 
+5. ~d v e 
+7. g v ~f 
+1. a 
+3. c v ~b 
+6. f v ~e 
+44. ~b 
+===============
+1. a 
+43. b v ~a 
+44. ~b 
+45. ~a (44, 43)
+46. NIl (45, 1)
+===============
+[CONCLUSION]: b is true
+===============
+4. d v ~c 
+43. b v ~a 
+5. ~d v e 
+7. g v ~f 
+1. a 
+6. f v ~e 
+48. ~c 
+===============
+[CONCLUSION]: c is unknown
+===============
+4. d v ~c 
+43. b v ~a 
+49. c v ~b 
+5. ~d v e 
+7. g v ~f 
+1. a 
+6. f v ~e 
+50. ~c 
+===============
+1. a 
+43. b v ~a 
+49. c v ~b 
+50. ~c 
+51. ~b (50, 49)
+52. ~a (51, 43)
+53. NIl (52, 1)
+===============
+[CONCLUSION]: c is true
+===============
+43. b v ~a 
+49. c v ~b 
+5. ~d v e 
+7. g v ~f 
+1. a 
+6. f v ~e 
+55. ~d 
+===============
+[CONCLUSION]: d is unknown
+===============
+56. d v ~c 
+43. b v ~a 
+49. c v ~b 
+5. ~d v e 
+7. g v ~f 
+1. a 
+6. f v ~e 
+57. ~d 
+===============
+1. a 
+43. b v ~a 
+49. c v ~b 
+56. d v ~c 
+57. ~d 
+58. ~c (57, 56)
+59. ~b (58, 49)
+60. ~a (59, 43)
+61. NIl (60, 1)
+===============
+[CONCLUSION]: d is true
+===============
+56. d v ~c 
+43. b v ~a 
+49. c v ~b 
+7. g v ~f 
+1. a 
+6. f v ~e 
+63. ~e 
+===============
+[CONCLUSION]: e is unknown
+===============
+56. d v ~c 
+43. b v ~a 
+49. c v ~b 
+64. ~d v e 
+7. g v ~f 
+1. a 
+6. f v ~e 
+65. ~e 
+===============
+1. a 
+43. b v ~a 
+49. c v ~b 
+56. d v ~c 
+64. ~d v e 
+65. ~e 
+66. ~d (65, 64)
+67. ~c (66, 56)
+68. ~b (67, 49)
+69. ~a (68, 43)
+70. NIl (69, 1)
+===============
+[CONCLUSION]: e is true
+===============
+56. d v ~c 
+43. b v ~a 
+49. c v ~b 
+64. ~d v e 
+7. g v ~f 
+1. a 
+72. ~f 
+===============
+[CONCLUSION]: f is unknown
+===============
+56. d v ~c 
+43. b v ~a 
+49. c v ~b 
+64. ~d v e 
+7. g v ~f 
+1. a 
+73. f v ~e 
+74. ~f 
+===============
+1. a 
+43. b v ~a 
+49. c v ~b 
+56. d v ~c 
+64. ~d v e 
+73. f v ~e 
+74. ~f 
+75. ~e (74, 73)
+76. ~d (75, 64)
+77. ~c (76, 56)
+78. ~b (77, 49)
+79. ~a (78, 43)
+80. NIl (79, 1)
+===============
+[CONCLUSION]: f is true
+===============
+56. d v ~c 
+43. b v ~a 
+49. c v ~b 
+64. ~d v e 
+1. a 
+73. f v ~e 
+82. ~g 
+===============
+[CONCLUSION]: g is unknown
+===============
+56. d v ~c 
+43. b v ~a 
+49. c v ~b 
+64. ~d v e 
+83. g v ~f 
+1. a 
+73. f v ~e 
+84. ~g 
+===============
+1. a 
+43. b v ~a 
+49. c v ~b 
+56. d v ~c 
+64. ~d v e 
+73. f v ~e 
+83. g v ~f 
+84. ~g 
+85. ~f (84, 83)
+86. ~e (85, 73)
+87. ~d (86, 64)
+88. ~c (87, 56)
+89. ~b (88, 49)
+90. ~a (89, 43)
+91. NIl (90, 1)
+===============
+[CONCLUSION]: g is true
+===============
+
+- Passed test: cooking new_pizza.txt new_pizza_input.txt
+-> Complete obtained output:
+6. tomatoes 
+4. salt 
+11. ~basil v ~tomatoes v ~dough v ~olive_oil v pizza_margherita v ~garlic 
+13. tomato_sauce v ~water v ~tomato_paste 
+3. water 
+16. ~dough v ~cheese v ~tomato_sauce v ~prosciutto v pizza_prosciutto 
+7. garlic 
+1. flour 
+2. yeast 
+12. tomato_paste 
+8. basil 
+15. prosciutto 
+14. cheese 
+10. mozzarella 
+9. olive_oil 
+5. ~salt v dough v ~flour v ~water v ~yeast 
+17. ~yeast 
+===============
+2. yeast 
+17. ~yeast 
+18. NIl (17, 2)
+===============
+[CONCLUSION]: yeast is true
+===============
+6. tomatoes 
+4. salt 
+11. ~basil v ~tomatoes v ~dough v ~olive_oil v pizza_margherita v ~garlic 
+13. tomato_sauce v ~water v ~tomato_paste 
+3. water 
+16. ~dough v ~cheese v ~tomato_sauce v ~prosciutto v pizza_prosciutto 
+7. garlic 
+1. flour 
+2. yeast 
+12. tomato_paste 
+8. basil 
+15. prosciutto 
+14. cheese 
+10. mozzarella 
+9. olive_oil 
+5. ~salt v dough v ~flour v ~water v ~yeast 
+19. ~dough 
+===============
+1. flour 
+2. yeast 
+3. water 
+4. salt 
+5. ~salt v dough v ~flour v ~water v ~yeast 
+19. ~dough 
+20. ~salt v ~water v ~flour v ~yeast (19, 5)
+22. ~salt v ~yeast v ~flour (20, 3)
+25. ~yeast v ~flour (22, 4)
+32. ~yeast (25, 1)
+35. NIl (32, 2)
+===============
+[CONCLUSION]: dough is true
+===============
+6. tomatoes 
+4. salt 
+11. ~basil v ~tomatoes v ~dough v ~olive_oil v pizza_margherita v ~garlic 
+13. tomato_sauce v ~water v ~tomato_paste 
+3. water 
+16. ~dough v ~cheese v ~tomato_sauce v ~prosciutto v pizza_prosciutto 
+7. garlic 
+1. flour 
+2. yeast 
+12. tomato_paste 
+8. basil 
+15. prosciutto 
+14. cheese 
+10. mozzarella 
+9. olive_oil 
+5. ~salt v dough v ~flour v ~water v ~yeast 
+37. ~pizza_margherita 
+===============
+1. flour 
+2. yeast 
+3. water 
+4. salt 
+5. ~salt v dough v ~flour v ~water v ~yeast 
+6. tomatoes 
+7. garlic 
+8. basil 
+9. olive_oil 
+11. ~basil v ~tomatoes v ~dough v ~olive_oil v pizza_margherita v ~garlic 
+37. ~pizza_margherita 
+38. ~basil v ~tomatoes v ~dough v ~olive_oil v ~garlic (37, 11)
+43. ~basil v ~tomatoes v ~dough v ~garlic (38, 9)
+44. ~basil v ~garlic v ~dough (43, 6)
+58. ~basil v ~dough (44, 7)
+91. ~salt v ~water v ~basil v ~flour v ~yeast (58, 5)
+149. ~salt v ~water v ~flour v ~yeast (91, 8)
+217. ~salt v ~yeast v ~flour (149, 3)
+275. ~yeast v ~flour (217, 4)
+302. ~yeast (275, 1)
+309. NIl (302, 2)
+===============
+[CONCLUSION]: pizza_margherita is true
+===============
+6. tomatoes 
+4. salt 
+11. ~basil v ~tomatoes v ~dough v ~olive_oil v pizza_margherita v ~garlic 
+13. tomato_sauce v ~water v ~tomato_paste 
+16. ~dough v ~cheese v ~tomato_sauce v ~prosciutto v pizza_prosciutto 
+7. garlic 
+1. flour 
+2. yeast 
+12. tomato_paste 
+8. basil 
+15. prosciutto 
+14. cheese 
+10. mozzarella 
+9. olive_oil 
+5. ~salt v dough v ~flour v ~water v ~yeast 
+311. ~pizza_margherita 
+===============
+[CONCLUSION]: pizza_margherita is unknown
+===============
+6. tomatoes 
+4. salt 
+11. ~basil v ~tomatoes v ~dough v ~olive_oil v pizza_margherita v ~garlic 
+13. tomato_sauce v ~water v ~tomato_paste 
+456. water 
+16. ~dough v ~cheese v ~tomato_sauce v ~prosciutto v pizza_prosciutto 
+7. garlic 
+1. flour 
+2. yeast 
+12. tomato_paste 
+8. basil 
+15. prosciutto 
+14. cheese 
+10. mozzarella 
+9. olive_oil 
+5. ~salt v dough v ~flour v ~water v ~yeast 
+457. ~dough 
+===============
+1. flour 
+2. yeast 
+4. salt 
+5. ~salt v dough v ~flour v ~water v ~yeast 
+456. water 
+457. ~dough 
+458. ~salt v ~water v ~flour v ~yeast (457, 5)
+460. ~salt v ~yeast v ~flour (458, 456)
+463. ~yeast v ~flour (460, 4)
+470. ~yeast (463, 1)
+473. NIl (470, 2)
+===============
+[CONCLUSION]: dough is true
+===============
+6. tomatoes 
+4. salt 
+11. ~basil v ~tomatoes v ~dough v ~olive_oil v pizza_margherita v ~garlic 
+13. tomato_sauce v ~water v ~tomato_paste 
+456. water 
+16. ~dough v ~cheese v ~tomato_sauce v ~prosciutto v pizza_prosciutto 
+7. garlic 
+1. flour 
+2. yeast 
+12. tomato_paste 
+8. basil 
+15. prosciutto 
+14. cheese 
+10. mozzarella 
+9. olive_oil 
+475. ~dough 
+===============
+[CONCLUSION]: dough is unknown
+===============
+6. tomatoes 
+4. salt 
+11. ~basil v ~tomatoes v ~dough v ~olive_oil v pizza_margherita v ~garlic 
+13. tomato_sauce v ~water v ~tomato_paste 
+456. water 
+16. ~dough v ~cheese v ~tomato_sauce v ~prosciutto v pizza_prosciutto 
+7. garlic 
+1. flour 
+2. yeast 
+12. tomato_paste 
+8. basil 
+15. prosciutto 
+14. cheese 
+10. mozzarella 
+9. olive_oil 
+476. ~pizza_prosciutto 
+===============
+[CONCLUSION]: pizza_prosciutto is unknown
+===============
+6. tomatoes 
+4. salt 
+11. ~basil v ~tomatoes v ~dough v ~olive_oil v pizza_margherita v ~garlic 
+13. tomato_sauce v ~water v ~tomato_paste 
+497. ~salt v dough v ~flour v ~water v ~yeast 
+456. water 
+16. ~dough v ~cheese v ~tomato_sauce v ~prosciutto v pizza_prosciutto 
+7. garlic 
+1. flour 
+2. yeast 
+12. tomato_paste 
+8. basil 
+15. prosciutto 
+14. cheese 
+10. mozzarella 
+9. olive_oil 
+498. ~pizza_prosciutto 
+===============
+1. flour 
+2. yeast 
+4. salt 
+12. tomato_paste 
+13. tomato_sauce v ~water v ~tomato_paste 
+14. cheese 
+15. prosciutto 
+16. ~dough v ~cheese v ~tomato_sauce v ~prosciutto v pizza_prosciutto 
+456. water 
+497. ~salt v dough v ~flour v ~water v ~yeast 
+498. ~pizza_prosciutto 
+499. ~prosciutto v ~tomato_sauce v ~dough v ~cheese (498, 16)
+500. ~prosciutto v ~water v ~tomato_paste v ~dough v ~cheese (499, 13)
+507. ~water v ~tomato_paste v ~dough v ~cheese (500, 15)
+516. ~water v ~tomato_paste v ~dough (507, 14)
+544. ~water v ~dough (516, 12)
+590. ~salt v ~water v ~flour v ~yeast (544, 497)
+640. ~salt v ~yeast v ~flour (590, 456)
+683. ~yeast v ~flour (640, 4)
+704. ~yeast (683, 1)
+710. NIl (704, 2)
+===============
+[CONCLUSION]: pizza_prosciutto is true
+===============
+6. tomatoes 
+4. salt 
+11. ~basil v ~tomatoes v ~dough v ~olive_oil v pizza_margherita v ~garlic 
+13. tomato_sauce v ~water v ~tomato_paste 
+497. ~salt v dough v ~flour v ~water v ~yeast 
+456. water 
+16. ~dough v ~cheese v ~tomato_sauce v ~prosciutto v pizza_prosciutto 
+7. garlic 
+1. flour 
+2. yeast 
+8. basil 
+15. prosciutto 
+14. cheese 
+10. mozzarella 
+9. olive_oil 
+712. ~pizza_prosciutto 
+===============
+[CONCLUSION]: pizza_prosciutto is unknown
+===============
+13. tomato_sauce v ~water v ~tomato_paste 
+7. garlic 
+8. basil 
+456. water 
+16. ~dough v ~cheese v ~tomato_sauce v ~prosciutto v pizza_prosciutto 
+15. prosciutto 
+10. mozzarella 
+9. olive_oil 
+1. flour 
+6. tomatoes 
+4. salt 
+11. ~basil v ~tomatoes v ~dough v ~olive_oil v pizza_margherita v ~garlic 
+14. cheese 
+2. yeast 
+853. tomato_paste 
+497. ~salt v dough v ~flour v ~water v ~yeast 
+855. ~pizza_prosciutto 
+===============
+1. flour 
+2. yeast 
+4. salt 
+13. tomato_sauce v ~water v ~tomato_paste 
+14. cheese 
+15. prosciutto 
+16. ~dough v ~cheese v ~tomato_sauce v ~prosciutto v pizza_prosciutto 
+456. water 
+497. ~salt v dough v ~flour v ~water v ~yeast 
+853. tomato_paste 
+855. ~pizza_prosciutto 
+856. ~prosciutto v ~tomato_sauce v ~dough v ~cheese (855, 16)
+857. ~prosciutto v ~water v ~tomato_paste v ~dough v ~cheese (856, 13)
+865. ~water v ~tomato_paste v ~dough v ~cheese (857, 15)
+873. ~water v ~tomato_paste v ~dough (865, 14)
+901. ~water v ~dough (873, 853)
+947. ~salt v ~water v ~flour v ~yeast (901, 497)
+997. ~salt v ~yeast v ~flour (947, 456)
+1040. ~yeast v ~flour (997, 4)
+1061. ~yeast (1040, 1)
+1067. NIl (1061, 2)
+===============
+[CONCLUSION]: pizza_prosciutto is true
+===============
+7. garlic 
+8. basil 
+456. water 
+16. ~dough v ~cheese v ~tomato_sauce v ~prosciutto v pizza_prosciutto 
+15. prosciutto 
+10. mozzarella 
+9. olive_oil 
+1. flour 
+6. tomatoes 
+4. salt 
+11. ~basil v ~tomatoes v ~dough v ~olive_oil v pizza_margherita v ~garlic 
+14. cheese 
+2. yeast 
+853. tomato_paste 
+497. ~salt v dough v ~flour v ~water v ~yeast 
+1069. ~pizza_margherita 
+===============
+1. flour 
+2. yeast 
+4. salt 
+6. tomatoes 
+7. garlic 
+8. basil 
+9. olive_oil 
+11. ~basil v ~tomatoes v ~dough v ~olive_oil v pizza_margherita v ~garlic 
+456. water 
+497. ~salt v dough v ~flour v ~water v ~yeast 
+1069. ~pizza_margherita 
+1070. ~basil v ~tomatoes v ~dough v ~olive_oil v ~garlic (1069, 11)
+1075. ~basil v ~tomatoes v ~dough v ~garlic (1070, 9)
+1076. ~basil v ~garlic v ~dough (1075, 6)
+1090. ~basil v ~dough (1076, 7)
+1123. ~salt v ~water v ~basil v ~flour v ~yeast (1090, 497)
+1181. ~salt v ~water v ~flour v ~yeast (1123, 8)
+1249. ~salt v ~yeast v ~flour (1181, 456)
+1307. ~yeast v ~flour (1249, 4)
+1334. ~yeast (1307, 1)
+1341. NIl (1334, 2)
+===============
+[CONCLUSION]: pizza_margherita is true
+===============
