@@ -47,4 +47,5 @@ for details.
 ## Acknowledgments
 
 These assignments are part of the coursework for the Introduction to Artificial
-Intelligence class.
+Intelligence course at University of Zagreb, Faculty of Electrical Engineering
+and Computing.
