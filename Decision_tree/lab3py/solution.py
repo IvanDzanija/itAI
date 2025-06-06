@@ -32,6 +32,7 @@ def mostCommon(data, target):
         return None
 
     labels = Counter([row[target] for row in data])
+    print(labels)
     maxValue = max(labels.values())
     return min(key for key, value in labels.items() if value == maxValue)
 
@@ -108,18 +109,23 @@ class ID3:
         self.traverseTree(self.resultingTree, "")
 
     def buildTree(self, data, parentData, features, depth=0):
+        print(f"[BUILDING_TREE] Depth: {depth}, Features: {features}")
+        print(f"Data :{data}")
         if not data:
             return Node(isLeaf=True, label=mostCommon(parentData, self.target))
 
         labels = set([row[self.target] for row in data])
+        print("Labels:", labels)
         if len(labels) == 1:
             return Node(isLeaf=True, label=labels.pop())
 
         v = mostCommon(data, self.target)
+        print("Most common label:", v)
         if not features or depth == self.maxDepth:
             return Node(isLeaf=True, label=v)
 
         nextFeature = self.findBestFeature(data, features)
+        print("Best feature:", nextFeature)
         retNode = Node(
             feature=nextFeature, isLeaf=False, depth=depth + 1, mostCommonChild=v
         )
@@ -127,6 +133,7 @@ class ID3:
         values = set(row[nextFeature] for row in data)
         nextFeatures = features - {nextFeature}
         for value in sorted(values):
+            print(f"Processing value: {value} for feature: {nextFeature}")
             newData = self.filterData(data, nextFeature, value)
             retNode.setSubtrees(
                 self.buildTree(newData, data, nextFeatures, depth + 1), value
@@ -180,8 +187,6 @@ class ID3:
             prediction = self.predictSingle(data=row)
             predictions.append(prediction)
             correct.append(row[self.target])
-            print(prediction, end=" ")
-
         print()
         self.printAccuracy(predictions, correct)
         self.printConfusionMatrix(predictions, correct)
@@ -220,6 +225,8 @@ def main(args):
     if testDF is None:
         print("Error parsing test set.")
         return 1
+
+    assert target == test_target
 
     # Initialize the ID3 algorithm
     modelID3 = ID3(
