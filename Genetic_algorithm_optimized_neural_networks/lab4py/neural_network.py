@@ -63,7 +63,7 @@ class NeuralNetwork:
         for layer in self.layers[:-1]:
             currentWeights = layer["weights"]
             currentBiases = layer["biases"]
-            outputs = sigmoid(np.dot(outputs, currentWeights) + currentBiases)
+            outputs = sigmoid(outputs @ currentWeights + currentBiases)
 
         outputs = (
             np.dot(outputs, self.layers[-1]["weights"]) + self.layers[-1]["biases"]

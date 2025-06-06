@@ -44,7 +44,6 @@ class GeneticAlgorithm:
                 # Mutate biases with probability p
                 if rng.uniform(0, 1) < self.mutationProbability:
                     layer["biases"][0][j] += rng.normal(0, self.K)
-        return gene
 
     def crossover(self, parent1, parent2):
         child = nn.NeuralNetwork(self.nnArch, self.inputs)
@@ -71,7 +70,6 @@ class GeneticAlgorithm:
             size=numberOfParents,
             p=probabilities,
         )
-        # print(selected)
         return [self.population[i] for i in selected]
 
     def simulateDarwin(self, trainData, trainTarget):
@@ -85,7 +83,7 @@ class GeneticAlgorithm:
             while len(newPopulation) < self.popSize:
                 parent1, parent2 = self.chooseParents()
                 child = self.crossover(parent1, parent2)
-                child = self.mutate(child)
+                self.mutate(child)
                 newPopulation.append(child)
 
             self.population = newPopulation
