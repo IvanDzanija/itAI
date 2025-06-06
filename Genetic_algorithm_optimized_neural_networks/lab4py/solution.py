@@ -1,5 +1,6 @@
 import neural_network as nn
 import numpy as np
+import gen_algo as ga
 import argparse
 from parser import Parser
 
@@ -35,19 +36,37 @@ def main():
 
     parser.setPath(trainPath)
     trainDF = list()
-    trainTarget = parser.parseToDataframe(trainDF)
+    trainTarget = parser.parseToMatrix(trainDF)
+    trainTargets = [row[-1] for row in trainDF]
+    trainDF = [row[:-1] for row in trainDF]
+
     if trainTarget is None:
         print("Error: Could not parse training data.")
         return 1
 
     parser.setPath(testPath)
     testDF = list()
-    testTarget = parser.parseToDataframe(testDF)
+    testTarget = parser.parseToMatrix(testDF)
+    testTargets = [row[-1] for row in testDF]
+    testDF = [row[:-1] for row in testDF]
+
     if testTarget is None:
         print("Error: Could not parse testing data.")
         return 1
 
     assert testTarget == trainTarget
+
+    darwin = ga.GeneticAlgorithm(
+        nnArch=nnArchitecture,
+        popSize=popSize,
+        elitism=elitism,
+        K=K,
+        iterations=iterations,
+        mutProbability=mutationProbability,
+        inputs=len(trainDF[0]),
+    )
+    darwin.train(trainDF, trainTargets)
+    darwin.test(testDF, testTargets)
 
     return 0
 
