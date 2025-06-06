@@ -1,12 +1,7 @@
-import neural_network as nn
-import numpy as np
 import gen_algo as ga
+import numpy as np
 import argparse
 from parser import Parser
-
-
-def mse(y_true, y_pred):
-    return np.mean((y_true - y_pred) ** 2)
 
 
 def main():
@@ -55,6 +50,11 @@ def main():
         return 1
 
     assert testTarget == trainTarget
+
+    trainDF = np.array(trainDF)
+    trainTargets = np.array(trainTargets).reshape(-1, 1)
+    testDF = np.array(testDF)
+    testTargets = np.array(testTargets).reshape(-1, 1)
 
     darwin = ga.GeneticAlgorithm(
         nnArch=nnArchitecture,

@@ -18,7 +18,7 @@ class NeuralNetwork:
         if archEncoded == "5s":
             self.architecture = [inputSize, 5, 1]
         elif archEncoded == "20s":
-            self.architecture = [inputSize, 10, 1]
+            self.architecture = [inputSize, 20, 1]
         elif archEncoded == "5s5s":
             self.architecture = [inputSize, 5, 5, 1]
         else:

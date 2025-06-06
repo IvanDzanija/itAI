@@ -38,41 +38,40 @@ class GeneticAlgorithm:
                     # Mutate weights with probability p
                     if rng.uniform(0, 1) < self.mutationProbability:
                         layer["weights"][i][j] += rng.normal(0, self.K)
-                cols = len(layer["biases"])
-                for j in range(cols):
-                    # Mutate biases with probability p
-                    if rng.uniform(0, 1) < self.mutationProbability:
-                        layer["biases"][j] += rng.normal(0, self.K)
+
+            cols = len(layer["biases"])
+            for j in range(cols):
+                # Mutate biases with probability p
+                if rng.uniform(0, 1) < self.mutationProbability:
+                    layer["biases"][0][j] += rng.normal(0, self.K)
+        return gene
 
     def crossover(self, parent1, parent2):
         child = nn.NeuralNetwork(self.nnArch, self.inputs)
         layersCount = len(parent1.layers)
         for i in range(layersCount):
-            layer1 = parent1.layers[i]
-            layer2 = parent2.layers[i]
-            layerSize = len(layer1["weights"])
-            for j in range(layerSize):
-                child.layers[i]["weights"][j] = (
-                    layer1["weights"][j] + layer2["weights"][j]
-                ) / 2
+            weights1 = parent1.layers[i]["weights"]
+            weights2 = parent2.layers[i]["weights"]
+            child.layers[i]["weights"] = (weights1 + weights2) / 2
 
-            layersSize = len(layer1["biases"])
-            for j in range(layersSize):
-                child.layers[i]["biases"][j] = (
-                    layer1["biases"][j] + layer2["biases"][j]
-                ) / 2
+            biases1 = parent1.layers[i]["biases"]
+            biases2 = parent2.layers[i]["biases"]
+            child.layers[i]["biases"] = (biases1 + biases2) / 2
 
         return child
 
     def chooseParents(self, numberOfParents=2):
         rng = np.random.default_rng()
+        total = np.sum(self.fScores)
+        probabilities = [score / total for score in self.fScores]
         selected = rng.choice(
             len(
                 self.population
             ),  # Peaks into np.arrange and returns half-open interval [0, len(self.population))
             size=numberOfParents,
-            p=self.fScores / np.sum(self.fScores),
+            p=probabilities,
         )
+        # print(selected)
         return [self.population[i] for i in selected]
 
     def simulateDarwin(self, trainData, trainTarget):
@@ -86,7 +85,7 @@ class GeneticAlgorithm:
             while len(newPopulation) < self.popSize:
                 parent1, parent2 = self.chooseParents()
                 child = self.crossover(parent1, parent2)
-                self.mutate(child)
+                child = self.mutate(child)
                 newPopulation.append(child)
 
             self.population = newPopulation
