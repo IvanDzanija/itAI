@@ -9,8 +9,14 @@ def mse(yTrue, yPred):
     return np.mean((yTrue - yPred) ** 2)
 
 
+# Initialize random generator
+rng = np.random.default_rng()
+
+
 class NeuralNetwork:
     def __init__(self, archEncoded, inputSize):
+        self.weights = []
+        self.biases = []
         self.archDecode(archEncoded, inputSize)
         self.init_layers(self.architecture)
 
@@ -29,29 +35,19 @@ class NeuralNetwork:
             )
 
     def init_layers(self, architecture):
-        self.layers = [dict() for _ in range(len(architecture) - 1)]
-
-        # Initialize random generator
-        rng = np.random.default_rng()
-
-        for index, size in enumerate(architecture):
-            if index >= len(self.layers):
-                break
-            currentLayer = dict()
-
-            # Initialize weights and biases for the current layer
-            currentLayer["weights"] = rng.normal(
-                0, 0.01, (size, architecture[index + 1])
+        for i in range(len(architecture) - 1):
+            self.weights.append(
+                rng.normal(0, 0.01, (architecture[i], architecture[i + 1]))
             )
-            currentLayer["biases"] = rng.normal(0, 0.01, (1, architecture[index + 1]))
-            self.layers[index] = currentLayer
-
-    def __repr__(self):
-        return f"NeuralNetwork(layers={self.layers})"
+            self.biases.append(rng.normal(0, 0.01, (1, architecture[i + 1])))
 
     def __str__(self):
-        ret = "NeuralNetwork with layers:\n"
-        for i, layer in enumerate(self.layers):
+        ret = ""
+        for i in range(len(self.weights)):
+            layer = {
+                "weights": self.weights[i],
+                "biases": self.biases[i],
+            }
             ret += f"Layer {i + 1}:\n"
             ret += f"Weights:\n {layer['weights']}\n"
             ret += f"Biases:\n {layer['biases']}\n"
@@ -60,12 +56,10 @@ class NeuralNetwork:
 
     def forward(self, inputs):
         outputs = inputs
-        for layer in self.layers[:-1]:
-            currentWeights = layer["weights"]
-            currentBiases = layer["biases"]
+        for i in range(len(self.weights) - 1):
+            currentWeights = self.weights[i]
+            currentBiases = self.biases[i]
             outputs = sigmoid(outputs @ currentWeights + currentBiases)
 
-        outputs = (
-            np.dot(outputs, self.layers[-1]["weights"]) + self.layers[-1]["biases"]
-        )
+        outputs = outputs @ self.weights[-1] + self.biases[-1]
         return outputs

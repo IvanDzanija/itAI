@@ -2,6 +2,9 @@ import neural_network as nn
 import numpy as np
 
 
+rng = np.random.default_rng()
+
+
 class GeneticAlgorithm:
     def __init__(self, nnArch, popSize, elitism, mutProbability, inputs, K, iterations):
         self.nnArch = nnArch
@@ -29,46 +32,51 @@ class GeneticAlgorithm:
         return [self.population[i] for i in selected]
 
     def mutate(self, gene):
-        rng = np.random.default_rng()
-        for layer in gene.layers:
-            rows = len(layer["weights"])
-            for i in range(rows):
-                cols = len(layer["weights"][i])
-                for j in range(cols):
+        layers = len(gene.weights)
+        for i in range(layers):
+            rows = len(gene.weights[i])
+            for j in range(rows):
+                cols = len(gene.weights[i][j])
+                for k in range(cols):
                     # Mutate weights with probability p
                     if rng.uniform(0, 1) < self.mutationProbability:
-                        layer["weights"][i][j] += rng.normal(0, self.K)
+                        gene.weights[i][j][k] += rng.normal(0, self.K)
 
-            cols = len(layer["biases"])
+            cols = len(gene.biases[i][0])
             for j in range(cols):
                 # Mutate biases with probability p
                 if rng.uniform(0, 1) < self.mutationProbability:
-                    layer["biases"][0][j] += rng.normal(0, self.K)
+                    gene.biases[i][0][j] += rng.normal(0, self.K)
 
     def crossover(self, parent1, parent2):
         child = nn.NeuralNetwork(self.nnArch, self.inputs)
-        layersCount = len(parent1.layers)
-        for i in range(layersCount):
-            weights1 = parent1.layers[i]["weights"]
-            weights2 = parent2.layers[i]["weights"]
-            child.layers[i]["weights"] = (weights1 + weights2) / 2
 
-            biases1 = parent1.layers[i]["biases"]
-            biases2 = parent2.layers[i]["biases"]
-            child.layers[i]["biases"] = (biases1 + biases2) / 2
+        layers = len(child.weights)
+        for i in range(layers):
+            rows = len(child.weights[i])
+            for j in range(rows):
+                cols = len(child.weights[i][j])
+                for k in range(cols):
+                    child.weights[i][j][k] = (
+                        parent1.weights[i][j][k] + parent2.weights[i][j][k]
+                    ) / 2
+
+            cols = len(child.biases[i][0])
+            for j in range(cols):
+                # Mutate biases with probability p
+                child.biases[i][0][j] = (
+                    parent1.biases[i][0][j] + parent2.biases[i][0][j]
+                ) / 2
 
         return child
 
     def chooseParents(self, numberOfParents=2):
-        rng = np.random.default_rng()
-        total = np.sum(self.fScores)
-        probabilities = [score / total for score in self.fScores]
         selected = rng.choice(
             len(
                 self.population
             ),  # Peaks into np.arrange and returns half-open interval [0, len(self.population))
             size=numberOfParents,
-            p=probabilities,
+            p=self.fScores / np.sum(self.fScores),
         )
         return [self.population[i] for i in selected]
 

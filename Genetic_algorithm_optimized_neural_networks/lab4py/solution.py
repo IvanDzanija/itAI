@@ -1,6 +1,6 @@
-import gen_algo as ga
 import numpy as np
 import argparse
+import gen_algo as ga
 from parser import Parser
 
 
