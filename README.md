@@ -22,8 +22,8 @@ foundational AI concepts, providing practical experience through implementation.
 ### Prerequisites
 
 - Python 3.x
-- No external libraries are used, ensuring compatibility with standard Python
-  installations.
+- uv/pip
+- numpy
 
 ### Installation
 
@@ -32,6 +32,7 @@ foundational AI concepts, providing practical experience through implementation.
     ```bash
     git clone https://github.com/IvanDzanija/itAI.git
     cd itAI
+    uv sync
     ```
 
 ## Usage
